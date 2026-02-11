@@ -35,6 +35,7 @@ public class Application {
 		this.studentInfo = student;
 		this.dependent = dependent;
 		this.married = married;
+		this.spouse = spouse;
 		this.household = household;
 		this.income = income;
 		this.state = state;
