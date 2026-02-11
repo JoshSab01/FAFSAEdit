@@ -14,6 +14,7 @@ public class Rule {
 	private String definition;
 	private Expression parsedDefinition;
 	private String violationMessage;
+	private int severity;
 	//Used to actually evaluate the rule
 	ExpressionParser parser;
 
@@ -37,11 +38,13 @@ public class Rule {
 			@JsonProperty("id") String id, 
 			@JsonProperty("description") String description, 
 			@JsonProperty("definition") String definition, 
-			@JsonProperty("violationMessage") String violationMessage) {
+			@JsonProperty("violationMessage") String violationMessage,
+			@JsonProperty("severity") int severity) {
 		this.id = id;
 		this.description = description;
 		this.definition = definition;
 		this.violationMessage = violationMessage;
+		this.severity = severity;
 
 		this.parser = new SpelExpressionParser();
 		this.parsedDefinition = parser.parseExpression(definition);

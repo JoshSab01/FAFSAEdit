@@ -4,7 +4,7 @@ import com.fafsademo.edit.applications.Application;
 
 public class DependentRequiresParentIncomeRule extends Rule {
 	public DependentRequiresParentIncomeRule() {
-		super("Dependent Income Validation", "Students who are dependents must include parent income.", "true", "If student is a dependent, parental income must be included.");
+		super("Dependent Income Validation", "Students who are dependents must include parent income.", "true", "If student is a dependent, parental income must be included.", 1);
 	}
 	
 	@Override

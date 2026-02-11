@@ -35,7 +35,8 @@ class TestRule {
             "StudentMinimumAgeRule",
             "Student must be older than 14",
             "studentInfo.age > 14",
-            "Student must be older than 14"
+            "Student must be older than 14",
+            1
         );
 
         assertDoesNotThrow(() -> rule.runRule(app));
@@ -59,7 +60,8 @@ class TestRule {
             "HouseholdInCollegeLessThanHousehold",
             "Must have less household members in college than household members",
             "household.numberInHousehold >= household.numberInCollege",
-            "Cannot have more household members in college than in household."
+            "Cannot have more household members in college than in household.",
+            1
         );
 
         RuleViolationException ex =
@@ -86,7 +88,8 @@ class TestRule {
             "StateValid",
             "State must be given in two-letter code",
             "state matches '(?:AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|NE)'",
-            "State must be given in two-letter code"
+            "State must be given in two-letter code",
+            1
         );
 
         assertDoesNotThrow(() -> rule.runRule(app));
@@ -109,7 +112,8 @@ class TestRule {
             "SSNValid",
             "SSN must be a string of 9 numbers.",
             "studentInfo.SSN matches '^\\d{9}$'",
-            "SSN is improperly formatted. Type your SSN as a string of 9 numbers. No dashes, no other characters."
+            "SSN is improperly formatted. Type your SSN as a string of 9 numbers. No dashes, no other characters.",
+            1
         );
 
         assertDoesNotThrow(() -> rule.runRule(app));
@@ -132,7 +136,8 @@ class TestRule {
             "REQUIRES_SSN",
             "SSN required",
             "#requires(studentInfo.SSN)",
-            "SSN is required"
+            "SSN is required",
+            1
         );
 
         RuleViolationException ex =
@@ -159,7 +164,8 @@ class TestRule {
 	        "REQUIRES_SSN",
 	        "SSN required",
 	        "#requires(studentInfo.SSN)",
-	        "SSN is required"
+	        "SSN is required",
+	        1
 	    );
 
         assertDoesNotThrow(() -> rule.runRule(app));

@@ -4,7 +4,7 @@ import com.fafsademo.edit.applications.Application;
 
 public class MarriedSpouseValidationRule extends Rule {
 	public MarriedSpouseValidationRule() {
-		super("Married Spouse Validation", "Married students must include spouse info.", "true", "If student is married, spouse information must be included.");
+		super("Married Spouse Validation", "Married students must include spouse info.", "true", "If student is married, spouse information must be included.", 1);
 	}
 	
 	@Override
