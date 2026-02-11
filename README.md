@@ -54,8 +54,8 @@ Rules can be adjusted by editing the config.json file. The program ingests the v
 I spent between 2 and 3 hours coding on this assignment. I first opened the assignment 2026-09-16:16 and was given a 48 hour deadline. Unfortunately, I had made commitments to staff an ambulance on the nights of the 9th and 10th, making uninterrupted time difficult to find. 
 I began setup work that night. It took me about 2 hours from 0 install (Eclipse + Spring/no GitHub SSH key) to first commit on my repository, and I spent ~20 minutes stubbing the initial solution. There were some interruptions from calls + context switching.
 I sat back down on 2026-02-10 at around 19:30 after the training program which we discussed in my interview. It is currently 2026-02-11 02:18. I was somewhat interrupted by calls as I worked.
-I have not included time wrestling setup in my tally. I started from effectively zero dev tooling and encountered some teething pains (e.g. I lost an hour and a half to fighting Eclipse classpath).
-I am learning some new frameworks here - Last time I used Spring was with an older version, so the webserver setup and Application/bean scheme is new to me.
+I have not included time wrestling setup in my tally. I started from effectively zero dev tooling and encountered some teething pains (e.g. I lost multiple hours on two separate issues fighting Eclipse classpath).
+I am learning some new frameworks here - Jackson, and last time I used Spring was with an older version, so the webserver setup and Application/bean scheme is new to me.
 There is also some research time and design time (e.g. during my commute) that is not included in the tally.
 
 ## AI Usage
