@@ -10,6 +10,9 @@ import com.fafsademo.edit.rules.RuleManager;
 
 @RestController
 public class ApplicationController {
+	//Spring handles error handling for us (i.e. translating exceptions to reasonable error codes) but it's not perfect.
+	//If we want to change the behavior or add custom exceptions and codes, we can make a RestControllerAdvice type for them.
+	//See https://spring.io/guides/tutorials/rest
 	@PostMapping("/application")
 	ApplicationResult newApplication(@RequestBody Application newApplication, RuleManager ruleManager) {
 		try {

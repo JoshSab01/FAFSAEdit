@@ -57,6 +57,9 @@ public class Rule {
 	 * @throws NoSuchMethodException If one of our custom SpEL methods does not exist. If this is thrown something is very wrong.
 	 */
 	public void runRule(Application application) throws RuleViolationException, NoSuchMethodException {
+		//TODO (maybe?) Discuss with team about generating a metric for each rule's runtime - do some rules take a longer time than others?
+		//Could get expensive with # of CW metrics and unclear about value. Could also set a threshold (no reasonable rule should take 5s to run)
+		//and throw a metric when we exceed that.
 		StandardEvaluationContext context = new StandardEvaluationContext(application);
 		context.registerFunction(
 		    "requires",

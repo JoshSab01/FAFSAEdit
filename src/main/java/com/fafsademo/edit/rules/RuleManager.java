@@ -60,6 +60,7 @@ public class RuleManager {
 	 * @return A list of String messages describing each problem with the application.
 	 */
 	public List<String> runAllRules(Application application) throws NoSuchMethodException {
+		//TODO: Add a datetime capturing the length of time this takes; track a metric on time to work all rules/process an application.
 		List<String> violations = new ArrayList<String>();
 		for (Rule rule : rules) {
 			try {
@@ -67,6 +68,7 @@ public class RuleManager {
 			}
 			catch (RuleViolationException e) {
 				violations.add(e.getMessage());
+				//TODO: Log a metric with the ID of the rule that failed - we want to see if particular rules are failing often.
 			}
 		}
 		return violations;
