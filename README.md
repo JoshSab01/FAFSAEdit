@@ -18,4 +18,34 @@ This is because Eclipse's test suite (apparently) hates Lombok. This is a known 
 ## Running and testing
 I've included my entire Eclipse directory as a package - running Eclipse should let you import as an existing project no problem. From there, Run -> Run Configurations -> Spring Boot App -> New Configuration. Defaults are all fine.
 The project will run on `http://localhost:8080/` There is one accessible endpoint: `http://localhost:8080/application`. I recommend Postman (using raw body to pass in applications) to interact with the web server.
-To invoke outside of IDE, you can navigate to the root directory and run `./gradlew bootRun`. 
+To invoke outside of IDE, you can navigate to the root directory and run `./gradlew bootRun`. The /application API is hit like below:
+```json
+{
+  "studentInfo": {
+    "firstName": String,
+    "lastName": String,
+    "ssn": String,
+    "dateOfBirth": String (ISO-8601 format)
+  },
+  "dependencyStatus": enum ["dependent", "independent"],
+  "maritalStatus": enum ["single", "married"],
+  "household": {
+    "numberInHousehold": int,
+    "numberInCollege": int
+  },
+  Optional<"spouseInfo">: {
+    "firstName": String,
+    "lastName": String,
+    "ssn": String,
+    "dateOfBirth": String (ISO-8601 format)
+  },
+  "income": {
+    "studentIncome": int,
+    "parentIncome": Optional<int>
+  },
+  "stateOfResidence": String (two-character state code)
+}
+```
+
+## Modifying behavior
+Rules can be adjusted by editing the config.json file. The program ingests the version of the file that is in bin/config (effectively a build directory). 
