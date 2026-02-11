@@ -4,24 +4,34 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class Person {
-	private String name;
+	private String firstName;
+	private String lastName;
 	private LocalDate DOB;
 	private int age;
 	private String ssn;
 	
-	public Person(String name, String DOB, String SSN) {
-		this.name = name;
+	public Person(String firstName, String lastName, String DOB, String SSN) {
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.DOB = LocalDate.parse(DOB);
 		this.ssn = SSN;
 		this.age = Period.between(this.DOB, LocalDate.now()).getYears();
 	}
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String name) {
+		this.firstName = name;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String name) {
+		this.lastName = name;
 	}
 
 	public LocalDate getDOB() {

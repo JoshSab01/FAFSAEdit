@@ -1,10 +1,16 @@
 package com.fafsademo.edit.rules;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import com.fafsademo.edit.applications.Application;
 import com.fafsademo.edit.rules.Rule;
+
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
 
 public class RuleManager {
 	private Set<Rule> rules;
@@ -23,7 +29,19 @@ public class RuleManager {
 	 * A setup function which pulls rule definitions from a config file.
 	 */
 	private Set<Rule> ingestRulesFromFile(String filepath) {
-		throw new UnsupportedOperationException();
+		rules = new HashSet<Rule>();
+		try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            File jsonFile = new File(filepath);
+            
+            Rule[] rulesArray = objectMapper.readValue(jsonFile, Rule[].class);
+            for (Rule rule : rulesArray) {
+            	rules.add(rule);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("There was an error while parsing the config file.", e);
+        }
+		return rules;
 	}
 	
 	/**
@@ -31,7 +49,16 @@ public class RuleManager {
 	 * @param application The application to check.
 	 * @return A list of String messages describing each problem with the application.
 	 */
-	public List<String> runAllRules(Application application) {
-		throw new UnsupportedOperationException();
+	public List<String> runAllRules(Application application) throws NoSuchMethodException {
+		List<String> violations = new ArrayList<String>();
+		for (Rule rule : rules) {
+			try {
+				rule.runRule(application);
+			}
+			catch (RuleViolationException e) {
+				violations.add(e.getMessage());
+			}
+		}
+		return violations;
 	}
 }

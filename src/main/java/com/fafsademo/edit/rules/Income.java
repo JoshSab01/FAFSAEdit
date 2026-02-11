@@ -4,12 +4,12 @@ public class Income {
 	public Income(int studentIncome) {
 		this.studentIncome = studentIncome;
 	}
-	public Income(int studentIncome, int parentIncome) {
+	public Income(Integer studentIncome, Integer parentIncome) {
 		this(studentIncome);
 		this.parentIncome = parentIncome;
 	}
 	int studentIncome;
-	int parentIncome;
+	Integer parentIncome;
 	public Integer getStudentIncome() {
 		return studentIncome;
 	}

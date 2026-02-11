@@ -19,7 +19,7 @@ class TestRule {
 	
     @Test
     void nestedGreaterThanPassesWhenTrue() throws Exception {
-    	Person student = new Person("Person", "2000-01-01", "SSN");
+    	Person student = new Person("Real", "Person", "2000-01-01", "SSN");
     	Household household = new Household(3, 1);
     	Income income = new Income(50000);
         Application app = new Application(
@@ -43,7 +43,7 @@ class TestRule {
 
     @Test
     void test_household_rule() throws Exception {
-    	Person student = new Person("Person", "2026-01-01", "SSN");
+    	Person student = new Person("Real", "Person", "2026-01-01", "SSN");
     	Household household = new Household(1, 18);
     	Income income = new Income(50000);
         Application app = new Application(
@@ -71,7 +71,7 @@ class TestRule {
 
     @Test
     void verify_Regex_capture() throws Exception {
-    	Person student = new Person("Person", "2000-01-01", "SSN");
+    	Person student = new Person("Real", "Person", "2000-01-01", "SSN");
     	Household household = new Household(3, 1);
     	Income income = new Income(50000);
         Application app = new Application(
@@ -94,7 +94,7 @@ class TestRule {
     
     @Test
     void validate_ssn_rule() throws Exception {
-    	Person student = new Person("Person", "2000-01-01", "123456789");
+    	Person student = new Person("Real", "Person", "2000-01-01", "123456789");
     	Household household = new Household(3, 1);
     	Income income = new Income(50000);
         Application app = new Application(
@@ -117,7 +117,7 @@ class TestRule {
 
     @Test
     void requires_fails_whenFieldMissing() throws Exception {
-    	Person student = new Person("Person", "2000-01-01", null);
+    	Person student = new Person("Real", "Person", "2000-01-01", null);
     	Household household = new Household(3, 1);
     	Income income = new Income(50000);
         Application app = new Application(
@@ -143,7 +143,7 @@ class TestRule {
 
     @Test
     void requires_passes_whenFieldPresent() {
-    	Person student = new Person("Person", "2000-01-01", "SSN");
+    	Person student = new Person("Real", "Person", "2000-01-01", "SSN");
     	Household household = new Household(1, 1);
     	Income income = new Income(50000);
         Application app = new Application(

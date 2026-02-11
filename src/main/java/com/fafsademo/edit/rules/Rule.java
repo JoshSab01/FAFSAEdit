@@ -6,6 +6,7 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
 
 import com.fafsademo.edit.applications.Application;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Rule {
 	private String id;
@@ -32,7 +33,11 @@ public class Rule {
 	 * @param definition A syntactical definition of the rule.
 	 * @param violationMessage A message surfaced to users if the rule is violated.
 	 */
-	public Rule(String id, String description, String definition, String violationMessage) {
+	public Rule(
+			@JsonProperty("id") String id, 
+			@JsonProperty("description") String description, 
+			@JsonProperty("definition") String definition, 
+			@JsonProperty("violationMessage") String violationMessage) {
 		this.id = id;
 		this.description = description;
 		this.definition = definition;
