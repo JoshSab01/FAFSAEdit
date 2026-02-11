@@ -1,36 +1,36 @@
 package com.fafsademo.edit.applications;
 
+import com.fafsademo.edit.rules.Income;
+
 public class Application {
-	private Person student;
+	private Person studentInfo;
 	private boolean dependent;
 	private boolean married;
 	private Person spouse;
-	private int householdMembers;
-	private int householdMembersInCollege;
-	private int income;
+	private Household household;
+	private Income income;
 	private String state;
 	
-	public Application(Person student, boolean dependent, boolean married, int householdMembers, int householdMembersInCollege, int income, String state) {
-		this.student = student;
+	public Application(Person student, boolean dependent, boolean married, Household household, Income income, String state) {
+		this.studentInfo = student;
 		this.dependent = dependent;
 		this.married = married;
-		this.householdMembers = householdMembers;
-		this.householdMembersInCollege = householdMembersInCollege;
+		this.household = household;
 		this.income = income;
 		this.state = state;
 	}
 	
-	public Application(Person student, boolean dependent, boolean married, Person spouse, int householdMembers, int householdMembersInCollege, int income, String state) {
-		this(student, dependent, married, householdMembers, householdMembersInCollege, income, state);
+	public Application(Person student, boolean dependent, boolean married, Person spouse, Household household, Income income, String state) {
+		this(student, dependent, married, household, income, state);
 		this.spouse = spouse;
 	}
 	
-	public Person getStudent() {
-		return student;
+	public Person getStudentInfo() {
+		return studentInfo;
 	}
 
-	public void setStudent(Person student) {
-		this.student = student;
+	public void getStudentInfo(Person student) {
+		this.studentInfo = student;
 	}
 
 	public boolean isDependent() {
@@ -57,28 +57,12 @@ public class Application {
 		this.spouse = spouse;
 	}
 
-	public int getHouseholdMembers() {
-		return householdMembers;
+	public Household getHousehold() {
+		return household;
 	}
 
-	public void setHouseholdMembers(int householdMembers) {
-		this.householdMembers = householdMembers;
-	}
-
-	public int getHouseholdMembersInCollege() {
-		return householdMembersInCollege;
-	}
-
-	public void setHouseholdMembersInCollege(int householdMembersInCollege) {
-		this.householdMembersInCollege = householdMembersInCollege;
-	}
-
-	public int getIncome() {
+	public Income getIncome() {
 		return income;
-	}
-
-	public void setIncome(int income) {
-		this.income = income;
 	}
 
 	public String getState() {

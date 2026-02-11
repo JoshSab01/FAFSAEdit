@@ -1,0 +1,40 @@
+{
+	"rules": [
+		{
+			id: "Student Age",
+			description: "Students have a minimum age requirement.",
+			definition: "studentInfo.age > 14",
+			violationMessage: "Student must be at least 14 years old"
+		},
+		{
+			id: "SSN Validation",
+			description: "SSN must be a string of 9 numbers.",
+			definition: "studentInfo.ssn matches '^\d{9}$'",
+			violationMessage: "SSN is improperly formatted. Type your SSN as a string of 9 numbers. No dashes, no other characters."
+		},
+		{
+			id: "Student Income Validation",
+			description: "Income must be 0 or more.",
+			definition: "income.studentIncome > -1",
+			violationMessage: "Parent income cannot be negative."
+		},
+		{
+			id: "Parent Income Validation",
+			description: "Income must be 0 or more",
+			definition: "income.parentIncome > -1",
+			violationMessage: "Parent income cannot be negative."
+		},
+		{
+			id: "Household Numerics Validation.",
+			description: "Household numbers have to make sense",
+			definition: "household.numberInHousehold >= household.numberInCollege",
+			violationMessage: "Cannot have more people in household in college than total people in the household."
+		},
+		{
+			id: "State Code Validation",
+			description: "State code must correspond to valid state code",
+			definition: "state matches '(?:AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|NE)'",
+			violationMessage: "State must be a two-letter code (e.g. VA)."
+		}
+	]
+}

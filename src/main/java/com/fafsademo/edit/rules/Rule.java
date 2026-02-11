@@ -58,4 +58,16 @@ public class Rule {
 			throw new RuleViolationException(violationMessage);
 		}
 	}
+
+	public String getId() {
+		return id;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public String getViolationMessage() {
+		return violationMessage;
+	}
 }

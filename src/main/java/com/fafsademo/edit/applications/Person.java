@@ -7,12 +7,12 @@ public class Person {
 	private String name;
 	private LocalDate DOB;
 	private int age;
-	private String SSN;
+	private String ssn;
 	
 	public Person(String name, String DOB, String SSN) {
 		this.name = name;
 		this.DOB = LocalDate.parse(DOB);
-		this.SSN = SSN;
+		this.ssn = SSN;
 		this.age = Period.between(this.DOB, LocalDate.now()).getYears();
 	}
 
@@ -41,10 +41,10 @@ public class Person {
 	}
 
 	public String getSSN() {
-		return SSN;
+		return ssn;
 	}
 
 	public void setSSN(String sSN) {
-		SSN = sSN;
+		ssn = sSN;
 	}
 }
