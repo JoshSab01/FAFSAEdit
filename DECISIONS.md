@@ -1,8 +1,6 @@
 ## Rule Representation
 Rules are chiefly represented via a config.json file. In a production environment this would be represented in AppConfig (or similar) - something that allows production teams to change rules on the fly, adding and subtracting as-needed. We don't want to have to wait for a full code deployment or directly read code to modify rules. The rules use [SpEL](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/expressions.html) to define their behavior, which allows us to retain the ability to define our own behavior (which we did with `requires`, a keyword which performs a not-null check on a field.
 
-Two rules are defined in-code: if married, then spouse info, and if dependent, then have parent income. Notionally, it should be possible to use SpEL to represent them (e.g. a ternary with our defined keyword), but I encountered problems in testing and had to pivot for time reasons. I remain convinced it is possible to represent these rules with our current setup, I just don't have the time to fix it. I'd cut a tech debt ticket here.
-
 ## Error Handling
 This is a production system returning data that will in some way be surfaced to a member of the public. It would be a terrible experience to submit an application, experience a failure, fix it, and submit again only to find there was another failure you weren't made aware of. We run all rules and return all failures.
 

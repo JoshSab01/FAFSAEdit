@@ -21,6 +21,13 @@
 		"severity": 1
 	},
 	{
+		"id": "Dependent Income Validation",
+		"description": "Students who are dependents must include parent income.",
+		"definition": "dependent ? #requires(income.parentIncome) : true",
+		"violationMessage": "If student is a dependent, parental income must be included.",
+		"severity": 1
+	},
+	{
 		"id": "Parent Income Validation",
 		"description": "Income must be 0 or more",
 		"definition": "income.parentIncome != null ? income.parentIncome > -1 : true",
@@ -32,6 +39,13 @@
 		"description": "Household numbers have to make sense",
 		"definition": "household.numberInHousehold >= household.numberInCollege",
 		"violationMessage": "Cannot have more people in household in college than total people in the household.",
+		"severity": 1
+	},
+	{
+		"id": "Spouse Check",
+        "description": "Married Spouse Validation",
+        "definition": "married ? #requires(spouseInfo) : true",
+        "violationMessage": "If student is married, spouse information must be included.",
 		"severity": 1
 	},
 	{

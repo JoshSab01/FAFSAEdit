@@ -23,40 +23,20 @@ public class Person {
 	public String getFirstName() {
 		return firstName;
 	}
-
-	public void setFirstName(String name) {
-		this.firstName = name;
-	}
 	
 	public String getLastName() {
 		return lastName;
-	}
-
-	public void setLastName(String name) {
-		this.lastName = name;
 	}
 
 	public LocalDate getDOB() {
 		return DOB;
 	}
 
-	public void setDOB(LocalDate dOB) {
-		DOB = dOB;
-	}
-
 	public int getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
-	}
-
 	public String getSSN() {
 		return ssn;
-	}
-
-	public void setSSN(String sSN) {
-		ssn = sSN;
 	}
 }

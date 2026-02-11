@@ -14,13 +14,7 @@ public class Household {
 	public int getNumberInHousehold() {
 		return numberInHousehold;
 	}
-	public void setNumberInHousehold(int numberInHousehold) {
-		this.numberInHousehold = numberInHousehold;
-	}
 	public int getNumberInCollege() {
 		return numberInCollege;
-	}
-	public void setNumberInCollege(int numberInCollege) {
-		this.numberInCollege = numberInCollege;
 	}
 }

@@ -170,4 +170,32 @@ class TestRule {
 
         assertDoesNotThrow(() -> rule.runRule(app));
     }
+    
+    @Test
+    void requiresTernaryBehavior() {
+    	Person student = new Person("Real", "Person", "2000-01-01", "SSN");
+    	Household household = new Household(1, 1);
+    	Income income = new Income(50000);
+        Application app = new Application(
+            student,
+            false,
+            true,  // married
+            household,
+            income,
+            "CA"
+        );
+
+        Rule rule = new Rule(
+	        "Spouse Check",
+	        "A spouse is required if the student is married",
+	        "married ? #requires(spouseInfo) : true",
+	        "Spouse information is required if you are married.",
+	        1
+	    );
+
+        RuleViolationException ex =
+                assertThrows(RuleViolationException.class, () -> rule.runRule(app));
+
+            assertEquals("Spouse information is required if you are married.", ex.getMessage());
+    }
 }

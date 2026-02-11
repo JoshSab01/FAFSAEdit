@@ -33,8 +33,6 @@ public class RuleManager {
 	 */
 	public RuleManager(String rulesFilepath) {
 		this.rules = ingestRulesFromFile(rulesFilepath);
-		this.rules.add(new MarriedSpouseValidationRule());
-		this.rules.add(new DependentRequiresParentIncomeRule());
 	}
 	
 	/**

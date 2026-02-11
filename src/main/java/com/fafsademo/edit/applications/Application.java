@@ -67,24 +67,12 @@ public class Application {
 		return dependent;
 	}
 
-	public void setDependent(boolean dependent) {
-		this.dependent = dependent;
-	}
-
 	public boolean isMarried() {
 		return married;
 	}
 
-	public void setMarried(boolean married) {
-		this.married = married;
-	}
-
-	public Person getSpouse() {
+	public Person getSpouseInfo() {
 		return spouse;
-	}
-
-	public void setSpouse(Person spouse) {
-		this.spouse = spouse;
 	}
 
 	public Household getHousehold() {
@@ -97,9 +85,5 @@ public class Application {
 
 	public String getState() {
 		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
 	}
 }
