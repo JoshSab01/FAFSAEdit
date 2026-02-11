@@ -6,7 +6,7 @@ public class Income {
 	public Income(int studentIncome) {
 		this.studentIncome = studentIncome;
 	}
-	public Income(@JsonProperty("studentIncome") Integer studentIncome, @JsonProperty("parentIncome") Integer parentIncome) {
+	public Income(@JsonProperty(value="studentIncome", required=true) Integer studentIncome, @JsonProperty(value="parentIncome", required=false) Integer parentIncome) {
 		this(studentIncome);
 		this.parentIncome = parentIncome;
 	}
