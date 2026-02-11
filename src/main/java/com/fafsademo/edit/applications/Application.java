@@ -1,7 +1,10 @@
 package com.fafsademo.edit.applications;
 
 import com.fafsademo.edit.rules.Income;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Application {
 	private Person studentInfo;
 	private boolean dependent;
@@ -11,6 +14,33 @@ public class Application {
 	private Income income;
 	private String state;
 	
+	//Constructors for API response
+	public Application(
+		@JsonProperty("studentInfo") Person student, 
+		@JsonProperty("dependencyStatus") String dependencyStatus, 
+		@JsonProperty("maritalStatus") String maritalStatus, 
+		@JsonProperty("spouseInfo") Person spouse, 
+		@JsonProperty("household") Household household, 
+		@JsonProperty("income") Income income, 
+		@JsonProperty("stateOfResidence") String state) {
+		
+		boolean dependent = false;
+		boolean married = false;
+		if (dependencyStatus.equals("dependent")) {
+			dependent = true;
+		}
+		if (maritalStatus.equals("married")) {
+			married = true;
+		}
+		this.studentInfo = student;
+		this.dependent = dependent;
+		this.married = married;
+		this.household = household;
+		this.income = income;
+		this.state = state;
+	}
+	
+	//Constructors for testing
 	public Application(Person student, boolean dependent, boolean married, Household household, Income income, String state) {
 		this.studentInfo = student;
 		this.dependent = dependent;

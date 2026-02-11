@@ -3,6 +3,8 @@ package com.fafsademo.edit.applications;
 import java.time.LocalDate;
 import java.time.Period;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Person {
 	private String firstName;
 	private String lastName;
@@ -10,7 +12,7 @@ public class Person {
 	private int age;
 	private String ssn;
 	
-	public Person(String firstName, String lastName, String DOB, String SSN) {
+	public Person(@JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName, @JsonProperty("dateOfBirth") String DOB, @JsonProperty("ssn") String SSN) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.DOB = LocalDate.parse(DOB);

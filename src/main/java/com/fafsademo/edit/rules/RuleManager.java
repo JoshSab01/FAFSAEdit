@@ -6,14 +6,26 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
 import com.fafsademo.edit.applications.Application;
 import com.fafsademo.edit.rules.Rule;
 
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 
+@Component
 public class RuleManager {
 	private Set<Rule> rules;
+	
+	//In a real context this would be handled by AppConfig, but standing up AWS architecture is too much here.
+	private final static String DEFAULT_CONFIG_PATH = "bin/config/config.json";
+	
+	public RuleManager() {
+		this(DEFAULT_CONFIG_PATH);
+	}
 	
 	/**
 	 * Creates a new RuleManager with rules derived from the passed config file.
